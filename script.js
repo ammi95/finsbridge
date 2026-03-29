@@ -93,7 +93,6 @@ $(document).ready(function () {
             $(".error-msg").fadeIn();
             $(".auth-box").addClass("shake");
             setTimeout(() => $(".auth-box").removeClass("shake"), 300);
-            this.reset(); // ✅ reset form
         }
 
     });    
