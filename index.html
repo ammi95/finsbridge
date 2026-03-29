@@ -444,7 +444,7 @@
                     <input type="tel" maxlength="10" id="phone" placeholder="Phone Number" required>
                     <button type="submit">🚀 Submit Request</button>
                     <div class="success-msg">
-                        ✅ Request submitted successfully!
+                        ✅ Your request has been submitted successfully.
                     </div>
                 </form>
 
@@ -456,6 +456,11 @@
 
     </div>
     <script src="script.js"></script>
+    <script>
+        document.getElementById("phone").addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+    </script>
 </body>
 
 </html>

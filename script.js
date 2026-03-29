@@ -45,8 +45,8 @@ $(document).ready(function () {
             $(".error-msg").hide();
         }
         // $("#contactForm").hide();
-         $(this).find(".success-msg").fadeIn();
-         this.reset(); // ✅ reset form
+        $(this).find(".success-msg").fadeIn();
+        this.reset(); // ✅ reset form
     });
     $(".toggle-btn").click(function () {
         let form = $(this).data("form");
@@ -95,7 +95,7 @@ $(document).ready(function () {
             setTimeout(() => $(".auth-box").removeClass("shake"), 300);
         }
 
-    });    
+    });
     $("a[href^='#']").click(function (e) {
         e.preventDefault();
 
@@ -104,5 +104,17 @@ $(document).ready(function () {
         $("html, body").animate({
             scrollTop: target.offset().top - 80 // adjust header height
         }, 600);
+    });
+});
+
+document.querySelectorAll(".toggle-password").forEach(icon => {
+    icon.addEventListener("click", function () {
+        const input = this.parentElement.querySelector("input");
+
+        const type = input.type === "password" ? "text" : "password";
+        input.type = type;
+
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
     });
 });
